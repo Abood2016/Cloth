@@ -1,0 +1,77 @@
+<div class="row">
+    <div class="col-sm-12">
+        <form method="post" action="{{ route('admins.store') }}" class="ajaxForm">
+            {{csrf_field()}}
+
+            <div class="form-group row">
+                <label class="col-3 col-form-label">الإسم :</label>
+                <div class="col-8">
+                    <input class="form-control" name="name" autofocus style="text-align: center" type="text" id="name"
+                        autocomplete="off">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-3 col-form-label">الدور :</label>
+                <div class="col-8">
+                    <select class="form-control select2" id="type" name="type">
+                        <option value=""></option>
+                        <option value="super-admin">
+                            Super-admin
+                        </option>
+                        <option value="admin">
+                            Admin
+                        </option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-3 col-form-label">الإيميل :</label>
+                <div class="col-8">
+                    <input type="text" name="email" class="form-control" autofocus style="text-align: center">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-3 col-form-label">كلمة المرور :</label>
+                <div class="col-8">
+                    <input type="password" name="password" class="form-control" autofocus style="text-align: center">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-3 col-form-label">تأكيد كلمة المرور:</label>
+                <div class="col-8">
+                    <input type="password" name="password_confirmation" class="form-control" autofocus style="text-align: center">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                    <label class="col-3 col-form-label">الصورة :</label>
+                    <div class="input-icon input-icon-right">
+                        <input name="image" type="file" id="image" class="form-control" placeholder="" />
+                    </div>
+            </div>
+
+            <div class="col-sm-8 offset-sm-4">
+                <button type="submit" data-refresh="true" class="btn green btn-primary">حفظ</button>
+                <a class="btn btn-default " data-dismiss="modal">الغاء الأمر</a>
+            </div>
+    </div>
+    </form>
+</div>
+
+
+<script>
+    PageLoadMethods();
+
+//     $('#Popup .select2').each(function() {  
+//    var $p = $(this).parent(); 
+//    $(this).select2({  
+//      dropdownParent: $p,
+//         theme: "bootstrap"
+//    });  
+// });
+   $('.select2').select2();
+</script>
